@@ -20,10 +20,10 @@ public class DramaActor {
     private Long dramaActorId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "drama_id")
+    @JoinColumn(name = "drama_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Drama drama;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "actor_id")
+    @JoinColumn(name = "actor_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Actor actor;
 }

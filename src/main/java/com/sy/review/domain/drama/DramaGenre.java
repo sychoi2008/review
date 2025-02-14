@@ -10,6 +10,5 @@ public enum DramaGenre {
     HORROR("호러"),
     COMEDY("코미디"),
     ;
-
     private final String message;
 }

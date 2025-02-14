@@ -5,16 +5,12 @@ import com.sy.review.domain.ChannelSetConverter;
 import com.sy.review.domain.OTT;
 import com.sy.review.domain.OTTSetConverter;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Setter
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -34,24 +30,20 @@ public class Drama {
 
     private Integer episodeCount;
 
-//    @ElementCollection
-//    @Enumerated(EnumType.STRING)
-//    @CollectionTable(name = "drama_ott", joinColumns = @JoinColumn(name = "drama_id"))
-//    @Column(name = "ott")
-//    private Set<OTT> ottPlatforms = new HashSet<>();
-//
-//    @ElementCollection
-//    @Enumerated(EnumType.STRING)
-//    @CollectionTable(name = "drama_channel", joinColumns = @JoinColumn(name = "drama_id"))
-//    @Column(name = "channel")
-//    private Set<Channel> channelPlatforms = new HashSet<>();
-
     @Convert(converter = OTTSetConverter.class)
-    @Column(columnDefinition = "TEXT")
     private Set<OTT> ottPlatforms = new HashSet<>();
 
     @Convert(converter = ChannelSetConverter.class)
-    @Column(columnDefinition = "TEXT")
     private Set<Channel> channelPlatforms = new HashSet<>();
 
+    @Builder
+    public Drama(Set<Channel> channelPlatforms, Set<OTT> ottPlatforms, Integer episodeCount, LocalDate releasedDate, DramaGenre dramaGenre, String director, String title) {
+        this.channelPlatforms = channelPlatforms;
+        this.ottPlatforms = ottPlatforms;
+        this.episodeCount = episodeCount;
+        this.releasedDate = releasedDate;
+        this.dramaGenre = dramaGenre;
+        this.director = director;
+        this.title = title;
+    }
 }

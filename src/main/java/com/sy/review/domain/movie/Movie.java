@@ -1,7 +1,9 @@
 package com.sy.review.domain.movie;
 
 import com.sy.review.domain.Channel;
+import com.sy.review.domain.ChannelSetConverter;
 import com.sy.review.domain.OTT;
+import com.sy.review.domain.OTTSetConverter;
 import com.sy.review.domain.drama.DramaGenre;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -29,16 +31,10 @@ public class Movie {
 
     private LocalDate releasedDate;
 
-    @ElementCollection
-    @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "movie_ott", joinColumns = @JoinColumn(name = "movie_id"))
-    @Column(name = "ott")
+    @Convert(converter = OTTSetConverter.class)
     private Set<OTT> ottPlatforms = new HashSet<>();
 
-    @ElementCollection
-    @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "movie_channel", joinColumns = @JoinColumn(name = "movie_id"))
-    @Column(name = "channel")
+    @Convert(converter = ChannelSetConverter.class)
     private Set<Channel> channelPlatforms = new HashSet<>();
     
 }

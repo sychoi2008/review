@@ -23,21 +23,4 @@ class DramaRepositoryTest {
     @Autowired
     DramaRepository dramaRepository;
 
-    @BeforeEach
-    public void setup() {
-        Drama drama = new Drama();
-        drama.setDirector("abd");
-        drama.setOttPlatforms(Set.of(OTT.NETFLIX, OTT.TVING));
-        drama.setChannelPlatforms(Sets.of(Channel.KBS, Channel.MBC));
-        dramaRepository.saveAndFlush(drama);
-    }
-
-    @Commit
-    @Test
-    public void 생성() {
-        List<Drama> d = dramaRepository.findAll();
-        Drama drama = d.get(0);
-        System.out.println(drama.getChannelPlatforms());
-        System.out.println(drama.getChannelPlatforms().size());
-    }
 }

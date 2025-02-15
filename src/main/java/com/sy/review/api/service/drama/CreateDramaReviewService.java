@@ -6,6 +6,7 @@ import com.sy.review.domain.drama.Drama;
 import com.sy.review.domain.drama.DramaRepository;
 import com.sy.review.domain.drama.DramaReview;
 import com.sy.review.domain.drama.DramaReviewRepository;
+import com.sy.review.domain.drama.exception.DramaNotFoundException;
 import com.sy.review.domain.member.Member;
 import com.sy.review.domain.member.MemberRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -25,7 +26,7 @@ public class CreateDramaReviewService {
         Member member = memberRepository.findById(AuthUtil.MASTER_USER_ID)
                 .orElseThrow(() -> new EntityNotFoundException("user not found"));
         Drama drama = dramaRepository.findById(command.dramaId())
-                .orElseThrow(() -> new EntityNotFoundException("drama not found"));
+                .orElseThrow(() -> new DramaNotFoundException(command.dramaId()));
 
         dramaReviewRepository.save(
                 DramaReview.builder()

@@ -1,6 +1,5 @@
 package com.sy.review.domain;
 
-import com.sy.review.domain.Channel;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

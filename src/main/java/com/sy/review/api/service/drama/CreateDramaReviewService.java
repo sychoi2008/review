@@ -24,14 +24,14 @@ public class CreateDramaReviewService {
     public void execute(CreateDramaReviewServiceCommand command) {
         Member member = memberRepository.findById(AuthUtil.MASTER_USER_ID)
                 .orElseThrow(() -> new EntityNotFoundException("user not found"));
-        Drama drama = dramaRepository.findById(command.getDramaId())
+        Drama drama = dramaRepository.findById(command.dramaId())
                 .orElseThrow(() -> new EntityNotFoundException("drama not found"));
 
         dramaReviewRepository.save(
                 DramaReview.builder()
-                        .title(command.getTitle())
-                        .content(command.getContent())
-                        .rating(command.getRating())
+                        .title(command.title())
+                        .content(command.content())
+                        .rating(command.rating())
                         .drama(drama)
                         .member(member)
                         .build()

@@ -3,8 +3,10 @@ package com.sy.review.domain.drama;
 import com.sy.review.domain.actor.Actor;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(

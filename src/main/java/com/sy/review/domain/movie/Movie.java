@@ -4,7 +4,6 @@ import com.sy.review.domain.Channel;
 import com.sy.review.domain.ChannelSetConverter;
 import com.sy.review.domain.OTT;
 import com.sy.review.domain.OTTSetConverter;
-import com.sy.review.domain.drama.DramaGenre;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

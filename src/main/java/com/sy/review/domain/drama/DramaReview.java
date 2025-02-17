@@ -2,13 +2,11 @@ package com.sy.review.domain.drama;
 
 import com.sy.review.domain.member.Member;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
 @Entity
+@ToString(exclude ={"drama", "member"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class DramaReview {
     @Id

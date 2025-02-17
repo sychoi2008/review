@@ -1,6 +1,6 @@
 package com.sy.review.api.service.drama.dto;
 
-public record CreateDramaReviewServiceCommand(
+public record CreateDramaReviewCommand(
         String title,
         String content,
         Integer rating,

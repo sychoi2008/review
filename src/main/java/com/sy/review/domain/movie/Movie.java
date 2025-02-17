@@ -6,6 +6,7 @@ import com.sy.review.domain.OTT;
 import com.sy.review.domain.OTTSetConverter;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -35,5 +36,14 @@ public class Movie {
 
     @Convert(converter = ChannelSetConverter.class)
     private Set<Channel> channelPlatforms = new HashSet<>();
-    
+
+    @Builder
+    public Movie(String title, String director, MovieGenre movieGenre, LocalDate releasedDate, Set<OTT> ottPlatforms, Set<Channel> channelPlatforms) {
+        this.title = title;
+        this.director = director;
+        this.movieGenre = movieGenre;
+        this.releasedDate = releasedDate;
+        this.ottPlatforms = ottPlatforms;
+        this.channelPlatforms = channelPlatforms;
+    }
 }

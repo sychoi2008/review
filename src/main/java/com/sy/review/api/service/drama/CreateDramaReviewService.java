@@ -1,6 +1,6 @@
 package com.sy.review.api.service.drama;
 
-import com.sy.review.api.service.drama.dto.CreateDramaReviewServiceCommand;
+import com.sy.review.api.service.drama.dto.CreateDramaReviewCommand;
 import com.sy.review.domain.AuthUtil;
 import com.sy.review.domain.drama.Drama;
 import com.sy.review.domain.drama.DramaRepository;
@@ -22,7 +22,7 @@ public class CreateDramaReviewService {
     private final DramaRepository dramaRepository;
     private final MemberRepository memberRepository;
 
-    public void execute(CreateDramaReviewServiceCommand command) {
+    public void execute(CreateDramaReviewCommand command) {
         Member member = memberRepository.findById(AuthUtil.MASTER_USER_ID)
                 .orElseThrow(() -> new EntityNotFoundException("user not found"));
         Drama drama = dramaRepository.findById(command.dramaId())

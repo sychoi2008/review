@@ -1,6 +1,6 @@
 package com.sy.review.api.service.drama;
 
-import com.sy.review.api.service.drama.dto.CreateDramaReviewServiceCommand;
+import com.sy.review.api.service.drama.dto.CreateDramaReviewCommand;
 import com.sy.review.domain.AuthUtil;
 import com.sy.review.domain.drama.Drama;
 import com.sy.review.domain.drama.DramaRepository;
@@ -39,7 +39,7 @@ class CreateDramaReviewServiceTest {
     @Test
     void 리뷰_생성_성공() {
         // given
-        CreateDramaReviewServiceCommand command = new CreateDramaReviewServiceCommand(
+        CreateDramaReviewCommand command = new CreateDramaReviewCommand(
                 "TITLE",
                 "CONTENT",
                 5,

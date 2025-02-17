@@ -1,7 +1,5 @@
 package com.sy.review.api.controller;
 
-import com.sy.review.domain.drama.exception.DramaNotFoundException;
-import com.sy.review.domain.drama.exception.InvalidDramaException;
 import com.sy.review.domain.exception.BusinessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -40,7 +40,7 @@ public class Drama {
     private Set<Channel> channelPlatforms = new HashSet<>();
 
     @Builder
-    public Drama(Set<Channel> channelPlatforms, Set<OTT> ottPlatforms, Integer episodeCount, LocalDate releasedDate, DramaGenre dramaGenre, String director, String title) {
+    public Drama(Set<Channel> channelPlatforms, Set<OTT> ottPlatforms, Integer episodeCount, LocalDate releasedDate, DramaGenre dramaGenre, String director, String title, Long dramaId) {
         this.channelPlatforms = channelPlatforms;
         this.ottPlatforms = ottPlatforms;
         this.episodeCount = episodeCount;
@@ -48,5 +48,6 @@ public class Drama {
         this.dramaGenre = dramaGenre;
         this.director = director;
         this.title = title;
+        this.dramaId = dramaId;
     }
 }

@@ -28,11 +28,12 @@ public class DramaReview {
     private Member member;
 
     @Builder
-    public DramaReview(String title, String content, Integer rating, Drama drama, Member member) {
+    public DramaReview(Long id, String title, String content, Integer rating, Drama drama, Member member) {
         this.title = title;
         this.content = content;
         this.rating = rating;
         this.drama = drama;
         this.member = member;
+        this.id = id;
     }
 }

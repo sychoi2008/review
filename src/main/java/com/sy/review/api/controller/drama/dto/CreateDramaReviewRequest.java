@@ -1,9 +1,6 @@
-package com.sy.review.api.service.drama.dto;
+package com.sy.review.api.controller.drama.dto;
 
-import lombok.Builder;
-
-@Builder
-public record CreateDramaReviewCommand(
+public record CreateDramaReviewRequest(
         String title,
         String content,
         Integer rating,

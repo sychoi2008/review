@@ -14,6 +14,6 @@ public class FindDramaReviewService {
     private final DramaReviewRepository dramaReviewRepository;
 
     public List<DramaReview> findAllDramaReview() {
-        return dramaReviewRepository.findAll();
+        return dramaReviewRepository.findAllWithDramaAndMember();
     }
 }

@@ -1,17 +1,13 @@
 package com.sy.review.api.controller.drama.dto;
 
 import com.sy.review.domain.drama.DramaReview;
+import com.sy.review.domain.drama.QDrama;
 import lombok.*;
 
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 @Builder
-public final class FindDramaReviewResponse {
-    private List<FindDramaReviewResult> results;
-
+public record FindDramaReviewResponse(List<FindDramaReviewResult> results) {
     public static FindDramaReviewResponse of(List<DramaReview> dramaReviews) {
         return new FindDramaReviewResponse(
                 dramaReviews.stream()
@@ -20,16 +16,13 @@ public final class FindDramaReviewResponse {
         );
     }
 
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Getter
-    public static class FindDramaReviewResult {
-        private Long dramaId;
-        private Long dramaReviewId;
-        private Long memberId;
-        private String dramaReviewTitle;
-        private String dramaTitle;
-
+    public record FindDramaReviewResult(
+            Long dramaId,
+            Long dramaReviewId,
+            Long memberId,
+            String dramaReviewTitle,
+            String dramaTitle
+    ) {
         public static FindDramaReviewResult of(DramaReview dramaReview) {
             return new FindDramaReviewResult(
                     dramaReview.getDrama().getDramaId(),

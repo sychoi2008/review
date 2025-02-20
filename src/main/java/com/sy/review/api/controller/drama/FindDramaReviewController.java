@@ -21,5 +21,4 @@ public class FindDramaReviewController {
         List<DramaReview> dramaReviews = findDramaReviewService.findAllDramaReview();
         return FindDramaReviewResponse.of(dramaReviews);
     }
-
 }

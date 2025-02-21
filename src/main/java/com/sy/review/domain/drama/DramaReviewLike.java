@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @Table(name = "drama_review_like",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {"review_id", "member_id"})})
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"drama_review_id", "member_id"})})
 public class DramaReviewLike {
 
     @Id
@@ -22,7 +22,7 @@ public class DramaReviewLike {
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "drama_review_id")
     private DramaReview dramaReview;
 
     @Builder

@@ -27,9 +27,9 @@ public class DramaReview {
     @JoinColumn(name = "member_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Member member;
 
-    private Integer count;
+    @Column(nullable = false, columnDefinition = "0")
+    private Integer count = 0;
 
-    // select * from drame_review
     @Builder
     public DramaReview(Long id, String title, String content, Integer rating, Drama drama, Member member) {
         this.title = title;
@@ -38,6 +38,7 @@ public class DramaReview {
         this.drama = drama;
         this.member = member;
         this.id = id;
+        this.count = 0;
     }
 
     public DramaReview update(String content, Integer rating) {

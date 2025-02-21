@@ -1,5 +1,6 @@
 package com.sy.review.domain.drama;
 
+import com.sy.review.domain.BaseEntity;
 import com.sy.review.domain.actor.Actor;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
                 @UniqueConstraint(name = "drama_actor_idx_1", columnNames = {"drama_id", "actor_id"})
         }
 )
-public class DramaActor {
+public class DramaActor extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

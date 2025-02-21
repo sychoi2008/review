@@ -1,5 +1,6 @@
 package com.sy.review.domain.drama;
 
+import com.sy.review.domain.BaseEntity;
 import com.sy.review.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "drama_review_like",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"drama_review_id", "member_id"})})
-public class DramaReviewLike {
+public class DramaReviewLike extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

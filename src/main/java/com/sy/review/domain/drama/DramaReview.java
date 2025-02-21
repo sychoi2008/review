@@ -1,5 +1,6 @@
 package com.sy.review.domain.drama;
 
+import com.sy.review.domain.BaseEntity;
 import com.sy.review.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,7 +9,7 @@ import lombok.*;
 @Entity
 @ToString(exclude ={"drama", "member"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class DramaReview {
+public class DramaReview extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,7 +28,7 @@ public class DramaReview {
     @JoinColumn(name = "member_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Member member;
 
-    @Column(nullable = false, columnDefinition = "0")
+    @Column(nullable = false)
     private Integer count = 0;
 
     @Builder

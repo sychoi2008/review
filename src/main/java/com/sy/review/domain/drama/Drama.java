@@ -1,9 +1,6 @@
 package com.sy.review.domain.drama;
 
-import com.sy.review.domain.Channel;
-import com.sy.review.domain.ChannelSetConverter;
-import com.sy.review.domain.OTT;
-import com.sy.review.domain.OTTSetConverter;
+import com.sy.review.domain.*;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -17,7 +14,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Drama {
+public class Drama extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dramaId;

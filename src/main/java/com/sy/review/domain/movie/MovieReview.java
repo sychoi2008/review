@@ -3,6 +3,7 @@ package com.sy.review.domain.movie;
 import com.sy.review.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -29,4 +30,12 @@ public class MovieReview {
     @JoinColumn(name = "member_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Member member;
 
+    @Builder
+    public MovieReview(String title, String content, Integer rating, Movie movie, Member member) {
+        this.title = title;
+        this.content = content;
+        this.rating = rating;
+        this.movie = movie;
+        this.member = member;
+    }
 }

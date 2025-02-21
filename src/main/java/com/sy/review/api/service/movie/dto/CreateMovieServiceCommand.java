@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Builder
-public record CreateMovieCommand(
+public record CreateMovieServiceCommand(
         Long movieId,
         String title,
         String director,

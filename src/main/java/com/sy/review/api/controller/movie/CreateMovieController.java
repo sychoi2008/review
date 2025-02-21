@@ -15,7 +15,7 @@ public class CreateMovieController {
     private final CreateMovieService createMovieService;
 
     @PostMapping
-    public void createDrama(@RequestBody CreateMovieRequest request) {
+    public void createMovie(@RequestBody CreateMovieRequest request) {
         createMovieService.execute(request.toServiceCommand());
     }
 }

@@ -1,6 +1,6 @@
 package com.sy.review.api.controller.movie.dto;
 
-import com.sy.review.api.service.movie.dto.CreateMovieCommand;
+import com.sy.review.api.service.movie.dto.CreateMovieServiceCommand;
 import com.sy.review.domain.Channel;
 import com.sy.review.domain.OTT;
 import com.sy.review.domain.movie.MovieGenre;
@@ -29,8 +29,8 @@ public class CreateMovieRequest {
 
     private Set<Channel> channelPlatforms;
 
-    public CreateMovieCommand toServiceCommand() {
-        return CreateMovieCommand.builder()
+    public CreateMovieServiceCommand toServiceCommand() {
+        return CreateMovieServiceCommand.builder()
                 .title(title)
                 .director(director)
                 .movieGenre(movieGenre)

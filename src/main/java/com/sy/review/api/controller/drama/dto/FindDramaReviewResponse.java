@@ -1,8 +1,7 @@
 package com.sy.review.api.controller.drama.dto;
 
 import com.sy.review.domain.drama.DramaReview;
-import com.sy.review.domain.drama.QDrama;
-import lombok.*;
+import lombok.Builder;
 
 import java.util.List;
 
